@@ -5,8 +5,4 @@ Rails.application.routes.draw do
       resources :greetings, only: [:index]
     end
   end
-
-  get '*page', to: 'static#index', constraints: ->(req) do
-    !req.xhr? && req.format.html?
-  end
 end
